@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bibliothèque - Liste des ouvrages</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+    <link href="/css/grayscale.min.css" rel="stylesheet">
+
+</head>
+<div th:include="_navbar"></div>
+
+<body class="espaceSection">
+<div class="container">
+    <h1>LISTES DES OUVRAGES</h1>
+
+    <th:block th:if="${ouvrages.isEmpty()}">Aucun Ouvrage Disponible</th:block>
+    <hr>
+    <hr>
+
+    <th:unless>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Disponibilité</th>
+            <th>Nombre d'exemplaire</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ouvrage : ${ouvrages}">
+            <td th:text="${ouvrage.nom}" />
+            <td th:text="${ouvrage.nbExemplaire}" />
+        </tr>
+        </tbody>
+    </table>
+    </th:unless>
+</div>
+
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+<div th:include="_footer"></div>
+
+</body>
+
+</html>
+
+
