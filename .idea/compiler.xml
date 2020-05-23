@@ -6,27 +6,34 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="eureka-server" />
         <module name="microservice-client" />
         <module name="microservice-emprunt" />
         <module name="microservice-ouvrages" />
         <module name="microservice-compte" />
+        <module name="config-server" />
+        <module name="microservice-user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="config-server" target="11" />
+      <module name="eureka-server" target="11" />
       <module name="microservice-client" target="11" />
       <module name="microservice-compte" target="11" />
       <module name="microservice-emprunt" target="11" />
-      <module name="microservice-emprunter" target="11" />
       <module name="microservice-ouvrages" target="11" />
+      <module name="microservice-user" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-server" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
       <module name="microservice-client" options="-parameters" />
       <module name="microservice-compte" options="-parameters" />
       <module name="microservice-emprunt" options="-parameters" />
-      <module name="microservice-emprunter" options="-parameters" />
       <module name="microservice-ouvrages" options="-parameters" />
+      <module name="microservice-user" options="-parameters" />
     </option>
   </component>
 </project>

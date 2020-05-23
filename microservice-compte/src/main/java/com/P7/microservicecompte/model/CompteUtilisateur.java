@@ -9,16 +9,14 @@ public class CompteUtilisateur {
     @Id
     @GeneratedValue
     private Long id;
-    private String nomUtilisateur;
-    private String password;
+    private Long utilisateurId;
     private Long empruntId;
 
     public CompteUtilisateur() {
     }
 
-    public CompteUtilisateur(String nomUtilisateur, String password, Long empruntId) {
-        this.nomUtilisateur = nomUtilisateur;
-        this.password = password;
+    public CompteUtilisateur(Long utilisateurId, Long empruntId) {
+        this.utilisateurId = utilisateurId;
         this.empruntId = empruntId;
     }
 
@@ -30,20 +28,12 @@ public class CompteUtilisateur {
         this.id = id;
     }
 
-    public String getNomUtilisateur() {
-        return nomUtilisateur;
+    public Long getUtilisateurId() {
+        return utilisateurId;
     }
 
-    public void setNomUtilisateur(String nomUtilisateur) {
-        this.nomUtilisateur = nomUtilisateur;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUtilisateurId(Long utilisateurId) {
+        this.utilisateurId = utilisateurId;
     }
 
     public Long getEmpruntId() {

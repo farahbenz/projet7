@@ -3,13 +3,14 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$USER_HOME$/Downloads/microservice-compte/pom.xml" />
-        <option value="$USER_HOME$/Downloads/microservice-ouvrages/pom.xml" />
-        <option value="$USER_HOME$/Downloads/microservice-emprunt/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice-compte/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice-emprunt/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-user/pom.xml" />
         <option value="$PROJECT_DIR$/microservice-ouvrages/pom.xml" />
         <option value="$PROJECT_DIR$/microservice-client/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-compte/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-emprunt/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/../projet7/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
       </list>
     </option>
   </component>
