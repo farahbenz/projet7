@@ -10,12 +10,13 @@
         <module name="microservice-emprunt" />
         <module name="microservice-ouvrages" />
         <module name="microservice-compte" />
+        <module name="batch-processing" />
         <module name="microservice-user" />
-        <module name="batchprocessing" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="batch" target="11" />
+      <module name="batch-processing" target="11" />
       <module name="batchprocessing" target="11" />
       <module name="config-server" target="11" />
       <module name="email-batch" target="11" />
@@ -31,6 +32,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="batch" options="-parameters" />
+      <module name="batch-processing" options="-parameters" />
       <module name="batchprocessing" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="email-batch" options="-parameters" />
