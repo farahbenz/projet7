@@ -12,13 +12,15 @@ public class Emprunt {
     private Long id;
     private Long ouvrageId;
     private Date dateEmprunt;
+    private String email;
 
     public Emprunt() {
     }
 
-    public Emprunt(Long ouvrageId, Date dateEmprunt) {
+    public Emprunt(Long ouvrageId, Date dateEmprunt, String email) {
         this.ouvrageId = ouvrageId;
         this.dateEmprunt = dateEmprunt;
+        this.email = email;
     }
 
     public Long getId() {
@@ -43,5 +45,13 @@ public class Emprunt {
 
     public void setDateEmprunt(Date dateEmprunt) {
         this.dateEmprunt = dateEmprunt;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

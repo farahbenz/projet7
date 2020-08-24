@@ -6,18 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="eureka-server" />
         <module name="microservice-client" />
         <module name="microservice-emprunt" />
         <module name="microservice-ouvrages" />
         <module name="microservice-compte" />
-        <module name="zuul-server" />
-        <module name="config-server" />
         <module name="microservice-user" />
+        <module name="batchprocessing" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="batch" target="11" />
+      <module name="batchprocessing" target="11" />
       <module name="config-server" target="11" />
+      <module name="email-batch" target="11" />
       <module name="eureka-server" target="11" />
       <module name="microservice-client" target="11" />
       <module name="microservice-compte" target="11" />
@@ -29,7 +30,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="batch" options="-parameters" />
+      <module name="batchprocessing" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="email-batch" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="microservice-client" options="-parameters" />
       <module name="microservice-compte" options="-parameters" />

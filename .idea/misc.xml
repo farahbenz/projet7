@@ -8,10 +8,8 @@
         <option value="$PROJECT_DIR$/microservice-client/pom.xml" />
         <option value="$PROJECT_DIR$/microservice-compte/pom.xml" />
         <option value="$PROJECT_DIR$/microservice-emprunt/pom.xml" />
-        <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/../projet7/eureka-server/pom.xml" />
-        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
-        <option value="$PROJECT_DIR$/zuul-server/pom.xml" />
+        <option value="$USER_HOME$/Downloads/batch-processing/pom.xml" />
       </list>
     </option>
   </component>

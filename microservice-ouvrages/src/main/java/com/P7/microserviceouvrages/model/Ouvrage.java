@@ -13,6 +13,8 @@ public class Ouvrage {
     public Ouvrage() {
     }
 
+
+
     public Ouvrage(String nom, int nbExemplaire) {
         this.nom = nom;
         this.nbExemplaire = nbExemplaire;

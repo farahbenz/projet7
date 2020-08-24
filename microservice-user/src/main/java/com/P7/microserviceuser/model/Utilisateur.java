@@ -11,13 +11,16 @@ public class Utilisateur {
     private Long id;
     private String nomUtilisateur;
     private String motDePasse;
+    private String email;
+
 
     public Utilisateur() {
     }
 
-    public Utilisateur(String nomUtilisateur, String motDePasse) {
+    public Utilisateur(String nomUtilisateur, String motDePasse, String email) {
         this.nomUtilisateur = nomUtilisateur;
         this.motDePasse = motDePasse;
+        this.email = email;
     }
 
     public Long getId() {
@@ -42,5 +45,13 @@ public class Utilisateur {
 
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
