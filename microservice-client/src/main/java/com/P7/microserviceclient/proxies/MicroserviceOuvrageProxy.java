@@ -20,4 +20,13 @@ public interface MicroserviceOuvrageProxy {
     @GetMapping( value = "/Ouvrages/{id}")
     OuvrageBean recupererUnProduit(@PathVariable("id") Long id);
 
+    @GetMapping(value = "/rechercher/{nom}")
+    List<OuvrageBean> getOuvrageByNom(@PathVariable("nom") String nom);
+
+    @GetMapping( value = "/save")
+    OuvrageBean save();
+
+
+
+
 }

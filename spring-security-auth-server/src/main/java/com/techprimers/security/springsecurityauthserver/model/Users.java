@@ -1,51 +1,41 @@
 package com.techprimers.security.springsecurityauthserver.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
-public class Users {
+@Table(name= "user")
+public class Users implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
+    @Column(name =  "user_id")
     private int id;
-
-    @Column(name = "email")
     private String email;
-
-    @Column(name = "name")
     private String name;
-    @Column(name = "password")
-    private String password;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "active")
+    private String password;
     private int active;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns =
     @JoinColumn(name = "user_id"), inverseJoinColumns =
-    @JoinColumn(name = "role_id"))
+    @JoinColumn(name = "role_id" ))
     private Set<Role> roles;
-
 
     public Users() {
     }
 
     public Users(Users users) {
-
-        this.active = users.active;
+        this.active=users.active;
         this.email = users.email;
         this.id = users.id;
         this.lastName = users.lastName;
-        this.name = users.name;
         this.password = users.password;
         this.roles = users.roles;
-
     }
-
 
     public int getId() {
         return id;
@@ -71,20 +61,20 @@ public class Users {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getLastName() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getActive() {

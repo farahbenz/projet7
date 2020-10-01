@@ -1,17 +1,19 @@
 package com.techprimers.security.springsecurityauthserver.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+
 
 @Entity
-@Table(name = "role")
-public class Role {
+@Table(name="role")
+public class Role implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "role_id")
+    @GeneratedValue
+    @Column(name="role_id")
     private int roleId;
 
-    @Column(name = "role")
+    @Column
     private String role;
 
     public Role() {

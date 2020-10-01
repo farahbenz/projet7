@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/../projet7/eureka-server/pom.xml" />
         <option value="$USER_HOME$/Downloads/batch-processing/pom.xml" />
         <option value="$PROJECT_DIR$/batch-processing/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security-client/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security-auth-server/pom.xml" />
       </list>
     </option>
   </component>

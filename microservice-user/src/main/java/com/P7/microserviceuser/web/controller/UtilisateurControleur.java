@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -29,6 +30,15 @@ public class UtilisateurControleur {
     public Optional<Utilisateur> recupererUnUtilisateur(@PathVariable Long id){
 
         Optional<Utilisateur> compteUtilisateur = utilisateurDao.findById(id);
+
+        return compteUtilisateur;
+    }
+
+    // Recuperer l'id de l'utilisateur
+    @GetMapping(value = "/utilisateurs")
+    public List<Utilisateur> listeUtilisateurs(){
+
+        List<Utilisateur> compteUtilisateur = utilisateurDao.findAll();
 
         return compteUtilisateur;
     }

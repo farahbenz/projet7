@@ -1,10 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <style>
+        th {
+            text-align: left;
+        }
+        td {
+            white-space: nowrap;
+        }
+        td:first-child {
+            font-family: "Courier", monospace;
+            font-size: 0.9em;
+            color: #343434;
+        }
+    </style>
 </head>
 <body>
-$END$
+<h1>Hello<span th:if="${user}" th:text="' ' + ${user.nomUtilisateur}"> Joe</span>!</h1>
+<div th:unless="${user}">
+    <a th:href="@{/login}">Login</a>
+</div>
+<div th:if="${user}">
+    <form id="logoutForm" th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout"/>
+    </form>
+</div>
+
+<h2>User Properties</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>sub</td>
+        <td th:text="${user.nomUtilisateur}"></td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td th:text="${user.motDePasse}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

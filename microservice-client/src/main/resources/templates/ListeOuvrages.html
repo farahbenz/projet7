@@ -2,10 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Bibliothèque - Liste des ouvrages</title>
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
-    <link href="/css/grayscale.min.css" rel="stylesheet">
-
+    <div th:include="_head.html"></div>
 </head>
+
 <div th:include="_navbar"></div>
 
 <body class="espaceSection">
@@ -22,6 +21,7 @@
         <tr>
             <th>Titre</th>
             <th>NbExemplaire dispo</th>
+            <th>Emprunter</th>
 
         </tr>
         </thead>
@@ -29,6 +29,9 @@
         <tr th:each="ouvrage : ${ouvrages}">
             <td th:text="${ouvrage.nom}" />
             <td th:text="${ouvrage.nbExemplaire}" />
+            <td><form th:action="@{/emprunt/{id}(id=${ouvrage.id})}" method="post" th:object="${ouvrage}" >
+                <button type="submit" class = "btn btn-danger btn-sm" >Supprimer</button>
+            </form></td>
         </tr>
         </tbody>
     </table>

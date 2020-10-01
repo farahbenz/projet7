@@ -7,9 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface OuvrageDao extends JpaRepository<Ouvrage, Long> {
+public interface OuvrageDao extends JpaRepository<Ouvrage, Long>, OuvrageDaoCustom {
 
     @Override
     List<Ouvrage> findAll();
-
 }

@@ -16,6 +16,7 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
     @Autowired
     private UserDetailsService customUserDetailsService;
 

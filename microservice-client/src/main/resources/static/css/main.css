@@ -59,6 +59,8 @@ html {
   box-sizing: inherit;
 }
 
+
+
 /* ==========================================================================
    #RESET
    ========================================================================== */
@@ -471,7 +473,7 @@ input {
 }
 
 .card-3 .card-heading {
-  background: url("../img/inscription.jpg") top left/cover no-repeat;
+  background: url("/img/fondAcceuilP7.jpg") top left/cover no-repeat;
   display: table-cell;
   width: 50%;
 }

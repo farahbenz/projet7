@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <div th:include="_head.html"></div>
 </head>
-<body>
-$END$
+
+<body class="espaceSection">
+
+<div th:include="_navbar.html"></div>
+
+
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins col-xs-12">
+    <div class="wrapper wrapper--w780">
+        <div class="card card-3">
+            <div class="card-heading"></div>
+            <div class="card-body">
+                <h2 class="title">Se connecter</h2>
+                <th:form method="POST" action="/login">
+
+                    <div class="input-group">
+                        <input class="input--style-3" type="text" placeholder="Nom d'utilisateur" name="username"/>
+                    </div>
+
+                    <div class="input-group">
+                        <input class="input--style-3" type="password" placeholder="Mot de passe" name="password"/>
+                    </div>
+
+                    <hr/>
+
+                    <div class="p-t-10">
+                        <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Se connecter">
+                    </div>
+
+                </th:form>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
+
+<div th:include="_footer.html"></div>
+
 </html>
