@@ -10,6 +10,6 @@ public interface MicroserviceEmpruntProxy {
 
 
     @PostMapping(value = "/save")
-    void saveEmprunt(@RequestBody EmpruntBean empruntBean);
+    void saveEmprunt(@RequestBody EmpruntBean emprunt);
 
 }
