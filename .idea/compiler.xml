@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-security-auth-server" />
+        <module name="microservice-client" />
+        <module name="microservice-emprunt" />
+        <module name="microservice-ouvrages" />
+        <module name="batch-processing" />
+        <module name="microservice-user" />
+        <module name="microservice-compte" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="spring-security-client" target="1.8" />
+      <module name="user" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="batch-processing" options="-parameters" />
+      <module name="microservice-client" options="-parameters" />
+      <module name="microservice-compte" options="-parameters" />
+      <module name="microservice-emprunt" options="-parameters" />
+      <module name="microservice-ouvrages" options="-parameters" />
+      <module name="microservice-user" options="-parameters" />
+      <module name="user" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name= "user")
-public class Users implements Serializable {
+public class Users implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,6 +33,7 @@ public class Users implements Serializable {
         this.email = users.email;
         this.id = users.id;
         this.lastName = users.lastName;
+        this.name=users.name;
         this.password = users.password;
         this.roles = users.roles;
     }
@@ -92,4 +93,7 @@ public class Users implements Serializable {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+
+
 }

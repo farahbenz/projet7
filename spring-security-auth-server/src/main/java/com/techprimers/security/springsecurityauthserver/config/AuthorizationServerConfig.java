@@ -18,8 +18,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Autowired
     private AuthenticationManager authenticationManager;
 
+
     @Override
-    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+    public void configure(AuthorizationServerSecurityConfigurer security) {
 
         security.tokenKeyAccess("permitAll()")
                 .checkTokenAccess("isAuthenticated()");
@@ -39,8 +40,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 
     @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints){
         endpoints.authenticationManager(authenticationManager);
     }
 }

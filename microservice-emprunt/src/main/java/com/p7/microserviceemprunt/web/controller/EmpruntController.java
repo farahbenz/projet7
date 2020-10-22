@@ -18,20 +18,23 @@ public class EmpruntController {
     // Recuperer les emprunts
     @GetMapping(value = "/emprunt/{id}")
     public Optional<Emprunt> recupererUnEmprunt(@PathVariable Long id){
-
         Optional<Emprunt> emprunt = empruntDao.findById(id);
-
         return emprunt;
     }
 
-    // Affiche la liste de tous les ouvrages disponibles
-    @GetMapping(value = "/Ouvrages")
-    public List<Emprunt> listeDesOuvrages(){
+    //sauvegarder des emprunts
+    @PostMapping(value = "/save")
+    public Emprunt saveEmprunt(@RequestBody Emprunt emprunt) {
+        Emprunt emprunt1 = empruntDao.save(emprunt);
+        return emprunt1;
+    }
 
+
+    // Affiche la liste de tous les emprunts
+    @GetMapping(value = "/Emprunts")
+    public List<Emprunt> listeDesEmprunts(){
         List<Emprunt> emprunts = empruntDao.findAll();
-
         return emprunts;
-
     }
 
 

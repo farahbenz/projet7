@@ -1,16 +1,19 @@
 package com.p7.microserviceemprunt.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Emprunt {
+public class Emprunt implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
     private Long ouvrageId;
+    @UpdateTimestamp
+    @Temporal(TemporalType.DATE)
     private Date dateEmprunt;
     private String email;
 

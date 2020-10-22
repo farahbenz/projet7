@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/microservice-client/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-compte/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-emprunt/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-ouvrages/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security-auth-server/pom.xml" />
+        <option value="$PROJECT_DIR$/BatchScheduledMail/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-user/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

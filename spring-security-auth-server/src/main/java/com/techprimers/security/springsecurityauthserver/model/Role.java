@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="role")
-public class Role implements Serializable {
+public class Role implements Serializable{
 
     @Id
     @GeneratedValue
@@ -33,5 +33,13 @@ public class Role implements Serializable {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "roleId=" + roleId +
+                ", role='" + role + '\'' +
+                '}';
     }
 }

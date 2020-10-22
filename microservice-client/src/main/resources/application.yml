@@ -1,12 +1,9 @@
 server:
   port: 8082
+  context-path:
   session:
-
-  servlet:
-    context-path: /ui
-    session:
-      cookie:
-        name: UISESSION
+    cookie:
+      name: UISESSION
 
 
 security:
@@ -20,6 +17,7 @@ security:
       userAuthorizationUri: http://localhost:8081/auth/oauth/authorize
     resource:
       userInfoUri: http://localhost:8081/auth/rest/hello/principal
+
 
 
 spring:

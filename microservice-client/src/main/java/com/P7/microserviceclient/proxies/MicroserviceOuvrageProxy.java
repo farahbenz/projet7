@@ -11,7 +11,7 @@ import java.util.List;
 // c'est un proxy car elle se positionne comme une classe intermediaire qui fait le lien avec les Microservices
 // exterieurs à appeler.
 
-@FeignClient(name = "microservice-ouvrages", url = "localhost:8081")
+@FeignClient(name = "microservice-ouvrages", url = "localhost:8083")
 public interface MicroserviceOuvrageProxy {
 
     @GetMapping(value = "/Ouvrages")
@@ -22,9 +22,6 @@ public interface MicroserviceOuvrageProxy {
 
     @GetMapping(value = "/rechercher/{nom}")
     List<OuvrageBean> getOuvrageByNom(@PathVariable("nom") String nom);
-
-    @GetMapping( value = "/save")
-    OuvrageBean save();
 
 
 

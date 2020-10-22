@@ -1,4 +1,4 @@
-package com.P7.microserviceuser;
+package com.p7.microserviceuser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
