@@ -1,4 +1,4 @@
-package com.techprimers.security.springsecurityclient.config;
+package com.P7.microserviceclient.config.Oauth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

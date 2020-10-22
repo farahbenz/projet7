@@ -1,4 +1,4 @@
-package com.techprimers.security.springsecurityclient.config;
+package com.P7.microserviceclient.config.Oauth;
 
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;
