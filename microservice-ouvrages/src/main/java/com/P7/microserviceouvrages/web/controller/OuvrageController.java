@@ -14,17 +14,12 @@ public class OuvrageController {
     @Autowired
     private OuvrageDao ouvrageDao;
 
-    //Affiche la liste de tous les ouvrages disponibles
     @GetMapping(value = "/Ouvrages")
     public List<Ouvrage> listeDesOuvrages(){
-
         List<Ouvrage> ouvrages = ouvrageDao.findAll();
-
         return ouvrages;
-
     }
 
-    //Récuperer un ouvrage par son id
     @GetMapping(value = "/Ouvrages/{id}")
     public Optional<Ouvrage> recupererUnProduit(@PathVariable Long id) {
 
@@ -33,9 +28,6 @@ public class OuvrageController {
         return ouvrage;
     }
 
-
-
-    //Rechercher par un nom
     @GetMapping(value = "/rechercher/{nom}")
     public List<Ouvrage> getOuvrageByNom(@PathVariable String nom) {
 
@@ -43,7 +35,5 @@ public class OuvrageController {
 
         return ouvrages;
     }
-
-
 
 }

@@ -15,15 +15,15 @@ public class Emprunt implements Serializable {
     @UpdateTimestamp
     @Temporal(TemporalType.DATE)
     private Date dateEmprunt;
-    private String email;
+    private Long userId;
 
     public Emprunt() {
     }
 
-    public Emprunt(Long ouvrageId, Date dateEmprunt, String email) {
+    public Emprunt(Long ouvrageId, Date dateEmprunt, Long userId) {
         this.ouvrageId = ouvrageId;
         this.dateEmprunt = dateEmprunt;
-        this.email = email;
+        this.userId = userId;
     }
 
     public Long getId() {
@@ -50,11 +50,11 @@ public class Emprunt implements Serializable {
         this.dateEmprunt = dateEmprunt;
     }
 
-    public String getEmail() {
-        return email;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

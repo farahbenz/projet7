@@ -7,10 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-// on crée une interface qui regroupe les requêtes que nous souhaitons passer au micro service
-// c'est un proxy car elle se positionne comme une classe intermediaire qui fait le lien avec les Microservices
-// exterieurs à appeler.
-
 @FeignClient(name = "microservice-ouvrages", url = "localhost:8083")
 public interface MicroserviceOuvrageProxy {
 

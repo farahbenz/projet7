@@ -6,23 +6,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="microservice-user" />
         <module name="spring-security-auth-server" />
         <module name="microservice-client" />
         <module name="microservice-emprunt" />
         <module name="microservice-ouvrages" />
-        <module name="batch-processing" />
-        <module name="microservice-user" />
-        <module name="microservice-compte" />
+        <module name="email-batch" />
+        <module name="BatchMail" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="batch-processing" target="11" />
+      <module name="microservice-compte" target="11" />
       <module name="spring-security-client" target="1.8" />
       <module name="user" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BatchMail" options="-parameters" />
       <module name="batch-processing" options="-parameters" />
+      <module name="email-batch" options="-parameters" />
       <module name="microservice-client" options="-parameters" />
       <module name="microservice-compte" options="-parameters" />
       <module name="microservice-emprunt" options="-parameters" />

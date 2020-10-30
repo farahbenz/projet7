@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name="microservice-user", url = "localhost:8085")
 public interface MicroserviceUserProxy {
 
-    @GetMapping( value = "/User/{name}")
+    @GetMapping( value = "/Name/{name}")
     UserBean recupererUnUtilisateur(@PathVariable("name") String name);
+
+    @GetMapping(value = "User/{id}")
+    UserBean UserFindById(@PathVariable("id") Long id);
 
 }

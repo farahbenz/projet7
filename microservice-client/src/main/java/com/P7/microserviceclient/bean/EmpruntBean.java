@@ -7,16 +7,16 @@ public class EmpruntBean {
     private Long id;
     private Long ouvrageId;
     private Date dateEmprunt;
-    private String email;
+    private Long userId;
 
     public EmpruntBean() {
     }
 
-    public EmpruntBean(Long id, Long ouvrageId, Date dateEmprunt, String email) {
+    public EmpruntBean(Long id, Long ouvrageId, Date dateEmprunt, Long userId) {
         this.id = id;
         this.ouvrageId = ouvrageId;
         this.dateEmprunt = dateEmprunt;
-        this.email = email;
+        this.userId = userId;
     }
 
     public Long getId() {
@@ -43,21 +43,12 @@ public class EmpruntBean {
         this.dateEmprunt = dateEmprunt;
     }
 
-    public String getEmail() {
-        return email;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    @Override
-    public String toString() {
-        return "EmpruntBean{" +
-                "id=" + id +
-                ", ouvrageId=" + ouvrageId +
-                ", dateEmprunt=" + dateEmprunt +
-                ", email='" + email + '\'' +
-                '}';
-    }
 }

@@ -1,7 +1,5 @@
 package com.P7.microserviceclient.bean;
 
-
-//On crée un bean qui reprendre les champs dont on va avoir besoin pour les ouvrages
 public class OuvrageBean {
 
     private Long id;

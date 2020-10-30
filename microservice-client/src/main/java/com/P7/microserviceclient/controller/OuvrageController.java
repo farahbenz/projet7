@@ -15,9 +15,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-
-
 import java.util.List;
 
 @Controller
@@ -48,9 +45,9 @@ public class OuvrageController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String name = authentication.getName();
         UserBean userBean = microserviceUserProxy.recupererUnUtilisateur(name);
-        String email = userBean.getEmail();
+        int idUser = userBean.getId();
 
-        empruntBean.setEmail(email);
+        empruntBean.setUserId((long) idUser);
 
         OuvrageBean ouvrageBean = microserviceOuvrageProxy.recupererUnProduit(id);
         Long id1 = ouvrageBean.getId();
