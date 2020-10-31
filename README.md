@@ -1,4 +1,4 @@
-# PROJET  - Application Web 
+# PROJET  - Développez le nouveau système d’information de la bibliothèque d’une grande ville
 
 ## Présentation de l'application. 
 
