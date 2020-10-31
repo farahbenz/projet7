@@ -11,11 +11,6 @@ public class AffichageController {
         return "Acceuil";
     }
 
-    @RequestMapping(value = "/tableauBord")
-    public String tableauBord(){
-        return "TableauBord";
-    }
-
     @RequestMapping(value = "/listeOuvrage")
     public String listeOuvrage(){
         return "ListeOuvrage";

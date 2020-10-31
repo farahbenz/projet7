@@ -2,7 +2,7 @@ package com.P7.microserviceclient.bean;
 
 public class UserBean {
 
-    private int id;
+    private Long id;
     private String email;
     private String name;
     private String lastName;
@@ -12,7 +12,7 @@ public class UserBean {
     public UserBean() {
     }
 
-    public UserBean(int id, String email, String name, String lastName, String password, int active) {
+    public UserBean(Long id, String email, String name, String lastName, String password, int active) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -21,11 +21,11 @@ public class UserBean {
         this.active = active;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

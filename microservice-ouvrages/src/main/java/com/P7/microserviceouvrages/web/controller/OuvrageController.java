@@ -20,6 +20,7 @@ public class OuvrageController {
         return ouvrages;
     }
 
+
     @GetMapping(value = "/Ouvrages/{id}")
     public Optional<Ouvrage> recupererUnProduit(@PathVariable Long id) {
 
@@ -35,5 +36,7 @@ public class OuvrageController {
 
         return ouvrages;
     }
+
+
 
 }

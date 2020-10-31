@@ -1,8 +1,6 @@
 package com.P7.microserviceclient.controller;
 
-
 import com.P7.microserviceclient.bean.EmpruntBean;
-import com.P7.microserviceclient.bean.OuvrageBean;
 import com.P7.microserviceclient.bean.UserBean;
 import com.P7.microserviceclient.proxies.MicroserviceEmpruntProxy;
 import com.P7.microserviceclient.proxies.MicroserviceOuvrageProxy;
@@ -15,13 +13,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.Date;
 import java.util.List;
 
 @Controller
-public class OuvrageController {
-
-    @Autowired
-    MicroserviceOuvrageProxy microserviceOuvrageProxy;
+public class TableauDeBordController {
 
     @Autowired
     MicroserviceUserProxy microserviceUserProxy;
@@ -29,34 +26,35 @@ public class OuvrageController {
     @Autowired
     MicroserviceEmpruntProxy microserviceEmpruntProxy;
 
-    @RequestMapping(value = "/listeOuvrages", method = RequestMethod.GET)
-    public String listeOuvrages(Model model){
+    @Autowired
+    MicroserviceOuvrageProxy microserviceOuvrageProxy;
 
-        List<OuvrageBean> ouvrages = microserviceOuvrageProxy.listeDesOuvrages();
-        model.addAttribute("ouvrages", ouvrages);
+    /**
+     * Methode qui va permettre d'afficher le tableau de bord de chaque utilisateur connecté
+     */
 
-        return "ListeOuvrages";
-    }
-
-    @RequestMapping(value ="/Emprunt/{id}", method = RequestMethod.GET)
-    public String modifierTag(@PathVariable("id") Long id, EmpruntBean empruntBean) {
-
+    @RequestMapping(value ="/dashboard", method = RequestMethod.GET)
+    public String affichageDashboard(Model model) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String name = authentication.getName();
         UserBean userBean = microserviceUserProxy.recupererUnUtilisateur(name);
-        Long idUser = userBean.getId();
+        Long userId = userBean.getId();
 
-        empruntBean.setUserId(idUser);
+        List<EmpruntBean> empruntBean = microserviceEmpruntProxy.listeDesEmprunts(userId);
+        model.addAttribute("empruntUser", empruntBean);
 
-        OuvrageBean ouvrageBean = microserviceOuvrageProxy.recupererUnProduit(id);
-        Long id1 = ouvrageBean.getId();
-
-        empruntBean.setOuvrageId(id1);
-
-        microserviceEmpruntProxy.saveEmprunt(empruntBean);
-
-        return "redirect:/listeOuvrages";
+        return "TableauBord";
     }
+
+    @RequestMapping(value = "/RenouvelerEmprunt/{id}", method = RequestMethod.GET)
+    public String renouvelerEmprunt (@PathVariable Long id){
+        Date aujourdhui = new Date();
+        EmpruntBean empruntBean = microserviceEmpruntProxy.recupererUnEmprunt(id);
+        empruntBean.setDateEmprunt(aujourdhui);
+        microserviceEmpruntProxy.saveEmprunt(empruntBean);
+        return "TableauBord";
+    }
+
 
 }

@@ -20,6 +20,4 @@ public interface MicroserviceOuvrageProxy {
     List<OuvrageBean> getOuvrageByNom(@PathVariable("nom") String nom);
 
 
-
-
 }

@@ -27,11 +27,12 @@ public class EmpruntController {
     }
 
 
-    @GetMapping(value = "/Emprunts")
-    public List<Emprunt> listeDesEmprunts(){
-        List<Emprunt> emprunts = empruntDao.findAll();
+    @GetMapping(value = "/ListEmpruntsUserId/{userId}")
+    public List<Emprunt> listeDesEmprunts(@PathVariable Long userId){
+        List<Emprunt> emprunts = empruntDao.findByUserId(userId);
         return emprunts;
     }
+
 
 
 

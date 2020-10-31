@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="microservice-user" />
         <module name="spring-security-auth-server" />
         <module name="microservice-client" />
         <module name="microservice-emprunt" />
         <module name="microservice-ouvrages" />
         <module name="email-batch" />
+        <module name="microservice-user" />
         <module name="BatchMail" />
       </profile>
     </annotationProcessing>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <title>Bibliothèque - Resultat recherche</title>
     <div th:include="_head.html"></div>
@@ -9,7 +9,7 @@
 
 <body class="espaceSection">
 <div class="container">
-    <h1>TABLEAU DE BORD</h1>
+    <h1>TABLEAU DE BORD </h1>
 
 
     <hr>
@@ -19,21 +19,23 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Titre</th>
-                <th>NbExemplaire dispo</th>
+                <th>Date Emprunt</th>
+
+                <th>Action</th>
 
             </tr>
             </thead>
             <tbody>
-            <tr th:each="ouvrages : ${user}">
-                <td th:text="${user.nomUtilisateur}" />
+            <tr th:each="emprunt : ${empruntUser}">
+                <td th:text="${emprunt.dateEmprunt}"></td>
+
+                <td><form th:action="@{/RenouvelerEmprunt/{id}(id=${emprunt.id})}" th:object="${emprunt}" >
+                    <button type="submit" class = "btn btn-danger btn-sm" >Emprunter de nouveau</button>
+                </form></td>
             </tr>
             </tbody>
         </table>
     </th:unless>
-</div>
-
-
 </div>
 
 <script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
@@ -43,3 +45,5 @@
 </body>
 
 </html>
+
+
