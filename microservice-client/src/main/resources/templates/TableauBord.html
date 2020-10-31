@@ -30,7 +30,7 @@
                 <td th:text="${emprunt.dateEmprunt}"></td>
 
                 <td><form th:action="@{/RenouvelerEmprunt/{id}(id=${emprunt.id})}" th:object="${emprunt}" >
-                    <button type="submit" class = "btn btn-danger btn-sm" >Emprunter de nouveau</button>
+                    <button type="submit" class = "btn btn-danger btn-sm" onclick="this.disabled=true;">Emprunter de nouveau</button>
                 </form></td>
             </tr>
             </tbody>

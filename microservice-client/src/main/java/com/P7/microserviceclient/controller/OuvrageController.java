@@ -51,10 +51,15 @@ public class OuvrageController {
 
         OuvrageBean ouvrageBean = microserviceOuvrageProxy.recupererUnProduit(id);
         Long id1 = ouvrageBean.getId();
+        int nbExemplaire = ouvrageBean.getNbExemplaire();
 
         empruntBean.setOuvrageId(id1);
 
-        microserviceEmpruntProxy.saveEmprunt(empruntBean);
+        if(nbExemplaire!=0) {
+            ouvrageBean.setNbExemplaire(nbExemplaire -1);
+            microserviceOuvrageProxy.saveOuvrage(ouvrageBean);
+            microserviceEmpruntProxy.saveEmprunt(empruntBean);
+        }
 
         return "redirect:/listeOuvrages";
     }

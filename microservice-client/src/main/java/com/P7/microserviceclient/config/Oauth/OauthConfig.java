@@ -15,6 +15,8 @@ public class OauthConfig extends WebSecurityConfigurerAdapter{
 
         http.antMatcher("/**")
                 .authorizeRequests()
+                .antMatchers("/js/**", "/css/**", "/img/**", "/scss/**", "/vendor/**").permitAll()
+                .antMatchers("/acceuil").permitAll()
                 .antMatchers("/", "/login**")
                 .permitAll()
                 .anyRequest()
