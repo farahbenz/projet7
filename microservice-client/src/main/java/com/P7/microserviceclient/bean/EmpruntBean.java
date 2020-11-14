@@ -27,7 +27,7 @@ public class EmpruntBean {
         this.id = id;
     }
 
-    public Long getOuvrageId() {
+    public Long getOuvrageId(Long id) {
         return ouvrageId;
     }
 
@@ -43,7 +43,7 @@ public class EmpruntBean {
         this.dateEmprunt = dateEmprunt;
     }
 
-    public Long getUserId() {
+    public Long getUserId(Long idUser) {
         return userId;
     }
 

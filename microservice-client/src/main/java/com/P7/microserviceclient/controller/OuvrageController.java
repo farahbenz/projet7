@@ -39,24 +39,23 @@ public class OuvrageController {
     }
 
     @RequestMapping(value ="/Emprunt/{id}", method = RequestMethod.GET)
-    public String modifierTag(@PathVariable("id") Long id, EmpruntBean empruntBean) {
-
-
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String name = authentication.getName();
-        UserBean userBean = microserviceUserProxy.recupererUnUtilisateur(name);
-
-        Long idUser = userBean.getId();
-
-        empruntBean.setUserId(idUser);
+    public String EmpruntOuvrage(@PathVariable("id") Long id, EmpruntBean empruntBean) {
 
         OuvrageBean ouvrageBean = microserviceOuvrageProxy.recupererUnProduit(id);
         Long id1 = ouvrageBean.getId();
         int nbExemplaire = ouvrageBean.getNbExemplaire();
 
-        empruntBean.setOuvrageId(id1);
-
         if(nbExemplaire!=0) {
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String name = authentication.getName();
+            UserBean userBean = microserviceUserProxy.recupererUnUtilisateur(name);
+
+            Long idUser = userBean.getId();
+            empruntBean.setUserId(idUser);
+
+            empruntBean.setOuvrageId(id1);
+
             ouvrageBean.setNbExemplaire(nbExemplaire -1);
             microserviceOuvrageProxy.saveOuvrage(ouvrageBean);
             microserviceEmpruntProxy.saveEmprunt(empruntBean);

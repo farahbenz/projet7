@@ -19,7 +19,11 @@ Prolonger un prêt en cours. Le prêt d’un ouvrage n’est prolongeable qu’u
 
 -> À l'aide d'un serveur d'application lancer les fichiers WAR.  
 -> Pour le deployement de la base de données:    
-	- Installer MySQL.   
-	- Créer plusieurs base pour chaque API et copier le contenu du fichier ScriptSQL (disponible ci-dessus).  
-	- Inserer ensuite le contenu des fichier demoProjet (disponible ci-dessus). 
+	- Installer MySQL. 
+	- Creer la base de données avec nom d'utilisateur : root
+	                                    mot de passe  : 123
+	                                    port          : 3306
+	- Creer les differents schémas pour chacun des microservices 
+	- Copier le contenu des fichiers ScriptSQL (disponible ci-dessus) dans chaque schémas, pensez bien à selectionner les bon schemas.  
+	- Inserer ensuite le contenu des fichiers demoProjet (disponible ci-dessus). 
 
