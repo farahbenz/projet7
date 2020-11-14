@@ -33,6 +33,12 @@ public class EmpruntController {
         return emprunts;
     }
 
+    @GetMapping(value = "/Emprunts")
+    public List<Emprunt> listeDesEmprunts(){
+        List<Emprunt> emprunts = empruntDao.findAll();
+        return emprunts;
+    }
+
 
 
 

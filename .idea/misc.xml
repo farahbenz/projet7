@@ -8,8 +8,8 @@
         <option value="$PROJECT_DIR$/microservice-emprunt/pom.xml" />
         <option value="$PROJECT_DIR$/microservice-ouvrages/pom.xml" />
         <option value="$PROJECT_DIR$/spring-security-auth-server/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice-user/pom.xml" />
         <option value="$PROJECT_DIR$/email-batch/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-user/pom.xml" />
       </list>
     </option>
   </component>

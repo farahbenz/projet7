@@ -15,12 +15,22 @@ public class UserController {
     @Autowired
     private UsersRepository usersRepository;
 
-    @GetMapping(value ="/User/{name}")
+    @GetMapping(value ="/Name/{name}")
     public Optional<Users> recupererUnUtilisateur(@PathVariable String name){
 
         Optional<Users> user = usersRepository.findByName(name);
 
         return user;
+    }
+
+
+    @GetMapping(value ="/User/{id}")
+    public Optional<Users> UserFindById(@PathVariable Long id){
+
+        Optional<Users> userId = usersRepository.findById(id);
+
+        return userId;
+
     }
 
 }

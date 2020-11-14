@@ -10,7 +10,7 @@ public interface MicroserviceUserProxy {
     @GetMapping( value = "/Name/{name}")
     UserBean recupererUnUtilisateur(@PathVariable("name") String name);
 
-    @GetMapping(value = "User/{id}")
+    @GetMapping(value = "/User/{id}")
     UserBean UserFindById(@PathVariable("id") Long id);
 
 }

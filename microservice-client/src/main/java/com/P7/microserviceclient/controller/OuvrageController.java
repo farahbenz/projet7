@@ -45,6 +45,7 @@ public class OuvrageController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String name = authentication.getName();
         UserBean userBean = microserviceUserProxy.recupererUnUtilisateur(name);
+
         Long idUser = userBean.getId();
 
         empruntBean.setUserId(idUser);
