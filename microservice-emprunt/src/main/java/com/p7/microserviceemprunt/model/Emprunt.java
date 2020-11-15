@@ -16,14 +16,16 @@ public class Emprunt implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date dateEmprunt;
     private Long userId;
+    private String nomOuvrage;
 
     public Emprunt() {
     }
 
-    public Emprunt(Long ouvrageId, Date dateEmprunt, Long userId) {
+    public Emprunt(Long ouvrageId, Date dateEmprunt, Long userId, String nomOuvrage) {
         this.ouvrageId = ouvrageId;
         this.dateEmprunt = dateEmprunt;
         this.userId = userId;
+        this.nomOuvrage = nomOuvrage;
     }
 
     public Long getId() {
@@ -56,5 +58,13 @@ public class Emprunt implements Serializable {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public String getNomOuvrage() {
+        return nomOuvrage;
+    }
+
+    public void setNomOuvrage(String nomOuvrage) {
+        this.nomOuvrage = nomOuvrage;
     }
 }

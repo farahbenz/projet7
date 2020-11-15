@@ -30,7 +30,7 @@
             <td th:text="${ouvrage.nom}"></td>
             <td th:text="${ouvrage.nbExemplaire}"></td>
             <td><form th:action="@{/Emprunt/{id}(id=${ouvrage.id})}" th:object="${ouvrage}" >
-                <button type="submit" class = "btn btn-danger btn-sm" >Emprunter</button>
+                <button type="submit" class = "btn btn-warning btn-sm" >Emprunter</button>
             </form></td>
         </tr>
         </tbody>

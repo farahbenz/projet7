@@ -15,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -39,9 +41,9 @@ public class OuvrageController {
     }
 
     @RequestMapping(value ="/Emprunt/{id}", method = RequestMethod.GET)
-    public String EmpruntOuvrage(@PathVariable("id") Long id, EmpruntBean empruntBean) {
+    public String EmpruntOuvrage(@PathVariable("id") Long id, EmpruntBean emprunt) {
 
-        OuvrageBean ouvrageBean = microserviceOuvrageProxy.recupererUnProduit(id);
+        OuvrageBean ouvrageBean = microserviceOuvrageProxy.recupererUnOuvrage(id);
         Long id1 = ouvrageBean.getId();
         int nbExemplaire = ouvrageBean.getNbExemplaire();
 
@@ -51,14 +53,20 @@ public class OuvrageController {
             String name = authentication.getName();
             UserBean userBean = microserviceUserProxy.recupererUnUtilisateur(name);
 
-            Long idUser = userBean.getId();
-            empruntBean.setUserId(idUser);
+            emprunt.setNomOuvrage(ouvrageBean.getNom());
 
-            empruntBean.setOuvrageId(id1);
+            Long idUser = userBean.getId();
+            emprunt.setUserId(idUser);
+
+            emprunt.setOuvrageId(id1);
+
+            Date aujourdhui = new Date();
+            emprunt.setDateEmprunt(aujourdhui);
+
 
             ouvrageBean.setNbExemplaire(nbExemplaire -1);
             microserviceOuvrageProxy.saveOuvrage(ouvrageBean);
-            microserviceEmpruntProxy.saveEmprunt(empruntBean);
+            microserviceEmpruntProxy.saveEmprunt(emprunt);
         }
 
         return "redirect:/listeOuvrages";

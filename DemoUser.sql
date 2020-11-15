@@ -1,1 +1,0 @@
-insert into user (id, email, name) values(1, "farahben@wanadoo.fr", "Sam");

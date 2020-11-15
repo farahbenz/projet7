@@ -8,15 +8,16 @@ public class EmpruntBean {
     private Long ouvrageId;
     private Date dateEmprunt;
     private Long userId;
+    private String nomOuvrage;
 
     public EmpruntBean() {
     }
 
-    public EmpruntBean(Long id, Long ouvrageId, Date dateEmprunt, Long userId) {
-        this.id = id;
+    public EmpruntBean(Long ouvrageId, Date dateEmprunt, Long userId, String nomOuvrage) {
         this.ouvrageId = ouvrageId;
         this.dateEmprunt = dateEmprunt;
         this.userId = userId;
+        this.nomOuvrage = nomOuvrage;
     }
 
     public Long getId() {
@@ -27,7 +28,7 @@ public class EmpruntBean {
         this.id = id;
     }
 
-    public Long getOuvrageId(Long id) {
+    public Long getOuvrageId() {
         return ouvrageId;
     }
 
@@ -43,7 +44,7 @@ public class EmpruntBean {
         this.dateEmprunt = dateEmprunt;
     }
 
-    public Long getUserId(Long idUser) {
+    public Long getUserId() {
         return userId;
     }
 
@@ -51,4 +52,11 @@ public class EmpruntBean {
         this.userId = userId;
     }
 
+    public String getNomOuvrage() {
+        return nomOuvrage;
+    }
+
+    public void setNomOuvrage(String nomOuvrage) {
+        this.nomOuvrage = nomOuvrage;
+    }
 }
