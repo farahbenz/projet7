@@ -47,7 +47,7 @@ public class OuvrageController {
         Long id1 = ouvrageBean.getId();
         int nbExemplaire = ouvrageBean.getNbExemplaire();
 
-        if(nbExemplaire!=0) {
+
 
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             String name = authentication.getName();
@@ -62,7 +62,7 @@ public class OuvrageController {
 
             Date aujourdhui = new Date();
             emprunt.setDateEmprunt(aujourdhui);
-
+        if(nbExemplaire!=0) {
 
             ouvrageBean.setNbExemplaire(nbExemplaire -1);
             microserviceOuvrageProxy.saveOuvrage(ouvrageBean);

@@ -11,7 +11,7 @@ public class Users implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name =  "user_id")
-    private int id;
+    private Long id;
     private String email;
     private String name;
     @Column(name = "last_name")
@@ -38,11 +38,20 @@ public class Users implements Serializable{
         this.roles = users.roles;
     }
 
-    public int getId() {
+    public Users(String email, String name, String lastName, String password, int active, Set<Role> roles) {
+        this.email = email;
+        this.name = name;
+        this.lastName = lastName;
+        this.password = password;
+        this.active = active;
+        this.roles = roles;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
