@@ -10,6 +10,7 @@
         <module name="microservice-client" />
         <module name="microservice-emprunt" />
         <module name="microservice-ouvrages" />
+        <module name="microservice-batch" />
         <module name="email-batch" />
         <module name="microservice-user" />
         <module name="BatchMail" />
@@ -17,6 +18,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="batch-processing" target="11" />
+      <module name="email-batch" target="1.8" />
       <module name="microservice-compte" target="11" />
       <module name="spring-security-client" target="1.8" />
       <module name="user" target="11" />
