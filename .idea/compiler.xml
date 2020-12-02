@@ -11,7 +11,6 @@
         <module name="microservice-emprunt" />
         <module name="microservice-ouvrages" />
         <module name="microservice-batch" />
-        <module name="email-batch" />
         <module name="microservice-user" />
         <module name="BatchMail" />
       </profile>
@@ -29,6 +28,7 @@
       <module name="BatchMail" options="-parameters" />
       <module name="batch-processing" options="-parameters" />
       <module name="email-batch" options="-parameters" />
+      <module name="microservice-batch" options="-parameters" />
       <module name="microservice-client" options="-parameters" />
       <module name="microservice-compte" options="-parameters" />
       <module name="microservice-emprunt" options="-parameters" />

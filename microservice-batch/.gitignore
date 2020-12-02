@@ -12,7 +12,7 @@ target/
 .settings
 .springBeans
 .sts4-cache
-
+Constant.java
 ### IntelliJ IDEA ###
 .idea
 *.iws
